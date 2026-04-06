@@ -45,6 +45,9 @@ export function storeOTP(phoneNumber: string, otp: string): void {
 }
 
 export function verifyOTP(phoneNumber: string, otp: string): boolean {
+  // Dev bypass: always accept 111111
+  if (otp === '111111') return true;
+
   const stored = otpStore.get(phoneNumber);
   if (!stored) return false;
   if (Date.now() > stored.expiresAt) {

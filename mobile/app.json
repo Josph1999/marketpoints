@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "MarketPoints",
+    "slug": "marketpoints",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "scheme": "marketpoints",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.marketpoints.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "MarketPoints needs camera access to scan loyalty card barcodes"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.marketpoints.app"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow MarketPoints to scan loyalty card barcodes"
+        }
+      ],
+      "expo-secure-store",
+      "expo-web-browser"
+    ]
+  }
+}
